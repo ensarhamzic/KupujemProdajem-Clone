@@ -24,6 +24,8 @@ class User extends Authenticatable
         return $this->hasOne(Profile::class);
     }
 
+    
+
     protected static function boot()
     {
         parent::boot();

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,9 +20,12 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/profile/{user}', 'App\Http\Controllers\ProfilesController@index')->name('profile.index');
 
 Route::get('/profile/{user}/edit', 'App\Http\Controllers\ProfilesController@edit')->name('profile.edit');
 Route::patch('/profile/{user}', 'App\Http\Controllers\ProfilesController@update')->name('profile.update');
+
+
+Route::get('/product/create', [ProductsController::class, 'create'])->name('product.create');
+Route::post('/product/create', [ProductsController::class, 'store'])->name('product.store');
