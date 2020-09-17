@@ -47,5 +47,13 @@ class ProductsController extends Controller
                 'image' => $imagePath,
             ]);
         }
+
+        return redirect(route('product.show', $product->id));
+    }
+
+    public function show(Product $product) {
+        return view('products.show', [
+            'product' => $product,
+        ]);
     }
 }

@@ -19,5 +19,22 @@
             </div>
         </div>
     </div>
+
+    <div class="row justify-content-center mt-3">
+        <div class="col-md-8">
+            <div class="card">
+                @foreach ($user->profile->products as $product)
+                <a href="{{ route('product.show', $product->id) }}">
+                    <div class="d-flex justify-content-between align-items-center mt-2">
+                        <img src="/storage/{{ $product->images->get(1)->image }}" width="100" height="100">
+                        <h3>{{ $product->name }}</h3>
+                        Price: {{ $product->price }} {{ $product->currency }}
+                    </div>
+                </a>
+                    
+                @endforeach
+            </div>
+        </div>
+    </div>
 </div>
 @endsection

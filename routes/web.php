@@ -29,3 +29,4 @@ Route::patch('/profile/{user}', 'App\Http\Controllers\ProfilesController@update'
 
 Route::get('/product/create', [ProductsController::class, 'create'])->name('product.create');
 Route::post('/product/create', [ProductsController::class, 'store'])->name('product.store');
+Route::get('/product/{product}', [ProductsController::class, 'show'])->name('product.show');
